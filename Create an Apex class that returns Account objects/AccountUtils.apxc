@@ -1,0 +1,23 @@
+public class AccountUtils {
+    public static List<Account> accountsByState(String st) {
+        List<Account> acctList = [SELECT Id, Name FROM Account WHERE BillingState = :st];
+        return acctList;
+    }
+}
+
+
+public class examenAccenture {
+	public static Account insertAccount(String accountName, String webSite){
+        Account newAcct = new Account(Name = accountName,
+                                     Website = webSite);
+       	insert newAcct;
+        System.debug('Account created and inserted succesfully');
+        return newAcct; 
+        //Excute anonymous window:	
+        // examenAccenture.insertAccount('dummy test2', 'www.tech-co.com');
+    }
+    
+
+    public static void insertContactList(){
+	}
+}
